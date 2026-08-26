@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://erikacleans.com/sitemap.xml
+Sitemap: https://erikascleaningllc.com/sitemap.xml
