@@ -61,6 +61,8 @@ p{margin:0 0 1.05em}
 .btn--out{border-color:var(--plum);color:var(--plum)}
 .btn--out:hover{background:var(--plum);color:var(--blush)}
 .btn--light{border-color:var(--rule-light);color:var(--blush)}
+.btn--lemonish{background:var(--blush);color:var(--plum)}
+.btn--lemonish:hover{background:#fff}
 .btn--light:hover{background:var(--blush);color:var(--plum);border-color:var(--blush)}
 .btn--sm{padding:.6rem 1.05rem;font-size:.72rem}
 
@@ -147,22 +149,6 @@ p{margin:0 0 1.05em}
 .gtee h3{font-size:clamp(1.3rem,2.4vw,1.8rem);font-weight:800;text-transform:uppercase;margin-bottom:.5rem;color:var(--plum)}
 .gtee p{margin:0;color:var(--slate-70);max-width:58ch}
 @media(max-width:820px){.gtee{grid-template-columns:1fr;text-align:center;justify-items:center}}
-
-/* gallery */
-.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.gal__i{position:relative;aspect-ratio:4/5;border-radius:10px;overflow:hidden;border:2px solid var(--rule-soft);display:grid;place-items:center;text-align:center;padding:14px;background:linear-gradient(155deg,var(--white) 0%,var(--blush) 62%,var(--blush-2) 100%);transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s ease,box-shadow .35s ease}
-.gal__i:hover{transform:translateY(-5px);border-color:var(--pink);box-shadow:var(--shadow-sm)}
-.gal__i--bedroom,.gal__i--office{background:linear-gradient(155deg,var(--blush) 0%,var(--blush-2) 100%)}
-.gal__art{display:flex;flex-direction:column;align-items:center;gap:.55rem;padding:6px;position:relative;z-index:1}
-.gal__art svg{width:clamp(46px,5.6vw,62px);height:auto;color:var(--plum);opacity:.88}
-.gal__ttl{font-weight:800;font-size:.95rem;letter-spacing:-.01em;color:var(--plum);text-transform:uppercase}
-.gal__blurb{font-size:.78rem;line-height:1.45;color:var(--slate-70);max-width:22ch}
-.gal__i::before{content:"";position:absolute;width:150%;height:60%;left:-25%;top:-30%;background:radial-gradient(closest-side,rgba(255,255,255,.9),transparent);pointer-events:none}
-.gal__i:nth-child(1),.gal__i:nth-child(6){aspect-ratio:4/3}
-.gal__i img{width:100%;height:100%;object-fit:cover}
-.gal__cap{position:absolute;left:0;right:0;bottom:0;padding:.7rem .95rem;z-index:2;background:var(--plum);color:#fff;font-size:.74rem;font-weight:700;letter-spacing:.05em;transform:translateY(101%);transition:transform .32s cubic-bezier(.2,.7,.2,1)}
-.gal__i:hover .gal__cap{transform:translateY(0)}
-@media(max-width:900px){.gal{grid-template-columns:repeat(2,1fr)}}
 
 /* about */
 .about{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(26px,5vw,68px);align-items:start}
@@ -275,6 +261,31 @@ a.cont__c:hover{background:rgba(251,227,240,.2)}
 .fol__d{font-size:.85rem;color:var(--slate-70);line-height:1.5}
 .fol__go{position:absolute;top:1rem;right:1rem;color:var(--soft);transition:color .3s ease}
 .fol__c:hover .fol__go{color:var(--pink)}
+/* ---------- estimator ---------- */
+.est{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,3vw,34px);align-items:start}
+.est__form{background:var(--white);border:2px solid var(--rule-soft);border-radius:12px;padding:clamp(20px,2.8vw,32px)}
+.est__row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.est__f{margin-bottom:.95rem}
+.est__f label{display:block;font-size:.66rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--plum);margin-bottom:.4rem}
+.est__f select,.est__f input{width:100%;font-family:var(--sans);font-size:.95rem;font-weight:500;color:var(--slate);background:var(--blush);border:2px solid var(--rule-soft);border-radius:8px;padding:.72rem .85rem;-webkit-appearance:none;appearance:none}
+.est__f select{background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239A2A64' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8rem center;background-size:14px;padding-right:2.2rem}
+.est__f select:focus,.est__f input:focus{outline:none;border-color:var(--pink);background-color:#fff}
+.est__opts{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.est__opt{position:relative}
+.est__opt input{position:absolute;opacity:0;width:0;height:0}
+.est__opt span{display:block;text-align:center;font-size:.82rem;font-weight:700;color:var(--plum);background:var(--blush);border:2px solid var(--rule-soft);border-radius:8px;padding:.65rem .4rem;cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease}
+.est__opt input:checked+span{background:var(--pink);border-color:var(--pink);color:#fff}
+.est__opt input:focus-visible+span{outline:2.5px solid var(--plum);outline-offset:2px}
+.est__out{position:sticky;top:96px;background:var(--plum);color:var(--blush);border-radius:12px;padding:clamp(22px,3vw,34px);box-shadow:var(--shadow)}
+.est__k{font-size:.66rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);display:block;margin-bottom:.6rem}
+.est__price{font-size:clamp(2.2rem,5.2vw,3.1rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;color:#fff;margin:0}
+.est__note{font-size:.87rem;color:rgba(251,227,240,.82);margin:.9rem 0 0;line-height:1.6}
+.est__walk{background:var(--pink)}
+.est__cta{display:flex;flex-direction:column;gap:.6rem;margin-top:1.4rem}
+.est__cta .btn{width:100%}
+.est__fine{font-size:.74rem;color:rgba(251,227,240,.62);margin:1rem 0 0;line-height:1.55}
+@media(max-width:900px){.est{grid-template-columns:1fr}.est__out{position:static}}
+@media(max-width:480px){.est__row{grid-template-columns:1fr}}
 /* reveal */
 .js .rv{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}
 .js .rv.in{opacity:1;transform:none}
@@ -502,8 +513,8 @@ a.cont__c:hover{background:rgba(251,227,240,.2)}
     </a>
     <div class="nav__links">
       <a href="#services">Servicios</a>
-      <a href="#work">Trabajo</a>
       <a href="#about">Nosotros</a>
+      <a href="#estimate">Cotizar</a>
       <a href="#podcast">Podcast</a>
       <a href="#reviews">Reseñas</a>
       <a href="#contact">Contacto</a>
@@ -587,74 +598,55 @@ a.cont__c:hover{background:rgba(251,227,240,.2)}
   </div>
 </section>
 
-<!-- ================= GALLERY =================
-     ▸ TO ADD REAL PHOTOS: replace <div class="gal__ph">…</div> in each tile with
-       <img src="photos/your-photo.jpg" alt="Describe the room"> and keep the caption.
+<!-- ================= ESTIMATOR =================
+     ▸ PRICING lives in the ERIKA_PRICING block in the script at the
+       bottom of this file. Change the numbers there, nowhere else.
 -->
-<section class="sec sec--white" id="work">
+<section class="sec sec--white" id="estimate">
   <div class="wrap">
     <div class="sec__head rv">
-      <p class="eyebrow">Nuestro Trabajo</p>
-      <h2>Espacios recientes<br><span class="ser">que hemos cuidado.</span></h2>
-      <p class="lede">Casas, rentas y oficinas por todo el valle &mdash; esto es lo que atendemos, cuarto por cuarto.</p>
+      <p class="eyebrow">Cotización al instante</p>
+      <h2>¿Cuánto va a<br><span class="ser">costar?</span></h2>
+      <p class="lede">Conteste cinco preguntas rápidas para un precio aproximado. Las casas en condición normal reciben un rango de inmediato; si el lugar necesita más que eso, Erika va sin costo a verlo y lo cotiza bien.</p>
     </div>
-    <div class="gal rv">
-      <!-- ============================================================
-           PHOTO SLOTS — to use a real photo, replace the whole
-           <div class="gal__art">…</div> block inside a tile with:
-             <img src="photos/your-photo.jpg" alt="Describe the room">
-           Keep the <figcaption> line. Photos belong in a "photos"
-           folder sitting next to this file.
-           Free commercial-use stock: pexels.com or unsplash.com
-      ============================================================ -->
-      <figure class="gal__i gal__i--kitchen">
-        <div class="gal__art">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 26h48v30a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V26Z"/><path d="M8 38h48"/><path d="M20 26V12a6 6 0 0 1 12 0"/><circle cx="20" cy="32" r="1.6" fill="currentColor" stroke="none"/><circle cx="44" cy="32" r="1.6" fill="currentColor" stroke="none"/><path d="M18 46h10M36 46h10"/></svg>
-          <span class="gal__ttl">Cocina</span>
-          <span class="gal__blurb">Cubiertas, electrodomésticos y pisos, de arriba a abajo.</span>
+    <div class="est rv">
+      <div class="est__form">
+        <div class="est__row">
+          <div class="est__f"><label for="eBed">Recámaras</label><select id="eBed">
+            <option value="1">1</option><option value="2">2</option><option value="3" selected>3</option>
+            <option value="4">4</option><option value="5">5</option><option value="6">6+</option></select></div>
+          <div class="est__f"><label for="eBath">Baños</label><select id="eBath">
+            <option value="1">1</option><option value="1.5">1.5</option><option value="2" selected>2</option>
+            <option value="2.5">2.5</option><option value="3">3</option><option value="4">4+</option></select></div>
         </div>
-        <figcaption class="gal__cap">Cocina &middot; Limpieza profunda</figcaption>
-      </figure>
-      <figure class="gal__i gal__i--bedroom">
-        <div class="gal__art">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 50V22"/><path d="M6 34h52a4 4 0 0 1 4 4v12"/><path d="M6 50h56"/><path d="M14 34v-6a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v6"/><path d="M40 30h12"/></svg>
-          <span class="gal__ttl">Recámara</span>
-          <span class="gal__blurb">Ropa de cama cambiada y lista para huéspedes.</span>
+        <div class="est__row">
+          <div class="est__f"><label for="eSqft">Pies cuadrados</label><input id="eSqft" type="number" min="300" max="12000" step="50" value="1800" inputmode="numeric"></div>
+          <div class="est__f"><label for="ePets">Mascotas</label><select id="ePets">
+            <option value="0" selected>0</option><option value="1">1</option><option value="2">2</option><option value="3">3+</option></select></div>
         </div>
-        <figcaption class="gal__cap">Recámara &middot; Cambio de renta</figcaption>
-      </figure>
-      <figure class="gal__i gal__i--bath">
-        <div class="gal__art">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 34h52v6a12 12 0 0 1-12 12H18A12 12 0 0 1 6 40v-6Z"/><path d="M16 34V16a5 5 0 0 1 10 0"/><circle cx="21" cy="21" r="2"/><path d="M16 52v6M48 52v6"/></svg>
-          <span class="gal__ttl">Baño</span>
-          <span class="gal__blurb">Tallado, desinfectado y pulido.</span>
+        <div class="est__f"><label>Tipo de limpieza</label><div class="est__opts">
+          <label class="est__opt"><input type="radio" name="eType" value="standard" checked><span>Estándar</span></label><label class="est__opt"><input type="radio" name="eType" value="deep"><span>Profunda</span></label>
+          <label class="est__opt"><input type="radio" name="eType" value="move"><span>Mudanza</span></label><label class="est__opt"><input type="radio" name="eType" value="build"><span>Post-construcción</span></label>
+        </div></div>
+        <div class="est__f" id="eFreqWrap"><label>Con qué frecuencia</label><div class="est__opts">
+          <label class="est__opt"><input type="radio" name="eFreq" value="once"><span>Una vez</span></label><label class="est__opt"><input type="radio" name="eFreq" value="weekly"><span>Cada semana</span></label>
+          <label class="est__opt"><input type="radio" name="eFreq" value="biweekly" checked><span>Cada 2 semanas</span></label><label class="est__opt"><input type="radio" name="eFreq" value="monthly"><span>Cada 4 semanas</span></label>
+        </div></div>
+        <div class="est__f"><label>Condición de la casa</label><div class="est__opts" style="grid-template-columns:1fr">
+          <label class="est__opt"><input type="radio" name="eCond" value="light"><span>Se mantiene al día</span></label><label class="est__opt"><input type="radio" name="eCond" value="normal" checked><span>Normal, habitada</span></label><label class="est__opt"><input type="radio" name="eCond" value="heavy"><span>Hace mucho que no se limpia a fondo</span></label>
+        </div></div>
+      </div>
+
+      <div class="est__out" id="eOut">
+        <span class="est__k" id="eLabel">Rango estimado</span>
+        <p class="est__price" id="ePrice">$--</p>
+        <p class="est__note" id="eNote">Para una casa en esta condición. El precio final se confirma en su visita gratis.</p>
+        <div class="est__cta">
+          <a class="btn btn--lemonish" id="eText" href="#">Mande esto a Erika</a>
+          <a class="btn btn--light" href="tel:+15306044702">Llame al (530) 604-4702</a>
         </div>
-        <figcaption class="gal__cap">Baño &middot; Acabado a detalle</figcaption>
-      </figure>
-      <figure class="gal__i gal__i--living">
-        <div class="gal__art">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 30v-6a5 5 0 0 1 10 0v6"/><path d="M44 30v-6a5 5 0 0 1 10 0v6"/><path d="M14 30h36a6 6 0 0 1 6 6v10H8V36a6 6 0 0 1 6-6Z"/><path d="M8 46v8M56 46v8"/></svg>
-          <span class="gal__ttl">Sala</span>
-          <span class="gal__blurb">Sacudido, aspirado y listo para la semana.</span>
-        </div>
-        <figcaption class="gal__cap">Sala &middot; Servicio semanal</figcaption>
-      </figure>
-      <figure class="gal__i gal__i--office">
-        <div class="gal__art">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 46h48"/><path d="M14 46V22h36v24"/><path d="M22 30h18M22 38h12"/><path d="M20 46v8M44 46v8"/></svg>
-          <span class="gal__ttl">Oficina</span>
-          <span class="gal__blurb">Escritorios, vidrios y entradas siempre presentables.</span>
-        </div>
-        <figcaption class="gal__cap">Oficina &middot; Comercial</figcaption>
-      </figure>
-      <figure class="gal__i gal__i--sparkle">
-        <div class="gal__art">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 10l4.5 12.5L49 27l-12.5 4.5L32 44l-4.5-12.5L15 27l12.5-4.5L32 10Z"/><path d="M50 42l2 5.5 5.5 2-5.5 2L50 57l-2-5.5-5.5-2 5.5-2L50 42Z"/><path d="M14 8l1.4 4 4 1.4-4 1.4L14 19l-1.4-4-4-1.4 4-1.4L14 8Z"/></svg>
-          <span class="gal__ttl">Salida</span>
-          <span class="gal__blurb">Cada gabinete, cajón y clóset.</span>
-        </div>
-        <figcaption class="gal__cap">Salida &middot; Lista para inspección</figcaption>
-      </figure>
+        <p class="est__fine">Esto es un estimado, no una cotización. Cada casa es distinta — el precio se confirma en persona, antes de empezar.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -738,7 +730,7 @@ a.cont__c:hover{background:rgba(251,227,240,.2)}
        this file. Until it's set, the Facebook card hides itself and the
        row reflows — nothing looks broken.
 -->
-<section class="sec" id="follow">
+<section class="sec sec--white" id="follow">
   <div class="wrap">
     <div class="sec__head rv">
       <p class="eyebrow">Síganos</p>
@@ -987,6 +979,98 @@ var TIKTOK_URL = "https://www.tiktok.com/@zus797";
       $('#qrFrame').innerHTML = '<svg viewBox="0 0 ' + sz + ' ' + sz + '" role="img" aria-label="Código QR del podcast de Erika Cleans" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><rect width="' + sz + '" height="' + sz + '" fill="#fff"/><path d="' + d + '" fill="#9A2A64"/></svg>';
     }
   } catch (e) {}
+
+  /* ==========================================================
+     ▸ ERIKA_PRICING — the ONLY place to change prices.
+       Everything below is calculated from these numbers.
+     ========================================================== */
+  var ERIKA_PRICING = {
+    base:        70,   // starting point for any job
+    perBedroom:  18,
+    perBathroom: 22,
+    perSqFt:     0.015,
+    perPet:      8,
+    minimum:     120,  // never quote below this
+    typeMultiplier:  { standard: 1.00, deep: 1.60, move: 1.70 },
+    freqMultiplier:  { once: 1.35, weekly: 0.80, biweekly: 0.90, monthly: 1.00 },
+    condMultiplier:  { light: 0.95, normal: 1.15 },
+    rangeSpread: 0.12  // shows +/- 12 percent around the figure
+  };
+  /* ======================================================== */
+
+  (function () {
+    var T = {"walk": "Visita gratis", "walkP": "Vamos a verlo", "walkN": "Una casa en estas condiciones varía mucho — ponerle precio sin verla sería adivinar. Erika va sin costo y le da un número firme.", "buildN": "Los trabajos post-construcción dependen de la obra. Erika visita el lugar gratis y lo cotiza bien.", "rangeK": "Rango estimado", "rangeN": "Para una %s en condición normal. El precio final se confirma en su visita gratis.", "home": "casa", "sms": "Hola Erika, saqué un estimado en su sitio web:%0A%0A{d}%0A%0AEstimado: {p}%0AMi dirección es:", "walkSms": "Hola Erika, quisiera una visita gratis para limpieza:%0A%0A{d}%0A%0AMi dirección es:", "bed": "rec", "bath": "baños", "sqft": "pies²", "pets": "mascotas", "types": {"standard": "Limpieza estándar", "deep": "Limpieza profunda", "move": "Mudanza", "build": "Post-construcción"}, "freqs": {"once": "una vez", "weekly": "cada semana", "biweekly": "cada 2 semanas", "monthly": "cada 4 semanas"}, "conds": {"light": "se mantiene al día", "normal": "normal habitada", "heavy": "necesita mucho trabajo"}};
+    var form = document.getElementById('eBed');
+    if (!form) return;
+    var $i = function (id) { return document.getElementById(id); };
+    var radio = function (n) { var r = document.querySelector('input[name="' + n + '"]:checked'); return r ? r.value : null; };
+    var round5 = function (n) { return Math.round(n / 5) * 5; };
+
+    function details() {
+      var t = radio('eType'), f = radio('eFreq'), c = radio('eCond');
+      var p = [$i('eBed').value + ' ' + T.bed, $i('eBath').value + ' ' + T.bath,
+               ($i('eSqft').value || '?') + ' ' + T.sqft];
+      if (Number($i('ePets').value) > 0) p.push($i('ePets').value + ' ' + T.pets);
+      p.push(T.types[t]);
+      if (t === 'standard') p.push(T.freqs[f]);
+      p.push(T.conds[c]);
+      return p.join(', ');
+    }
+
+    function smsHref(tpl, price) {
+      return 'sms:+15306044702?&body=' +
+        tpl.replace('{d}', encodeURIComponent(details())).replace('{p}', encodeURIComponent(price || ''));
+    }
+
+    function calc() {
+      var P = ERIKA_PRICING;
+      var t = radio('eType'), f = radio('eFreq'), c = radio('eCond');
+      var freqWrap = $i('eFreqWrap');
+      freqWrap.style.display = (t === 'standard') ? '' : 'none';
+
+      var out = $i('eOut'), label = $i('eLabel'), price = $i('ePrice'),
+          note = $i('eNote'), txt = $i('eText');
+
+      // conditions we will not price sight-unseen
+      if (c === 'heavy' || t === 'build') {
+        out.classList.add('est__walk');
+        label.textContent = T.walk;
+        price.textContent = T.walkP;
+        price.style.fontSize = 'clamp(1.6rem,3.6vw,2.2rem)';
+        note.textContent = (t === 'build') ? T.buildN : T.walkN;
+        txt.href = smsHref(T.walkSms, '');
+        return;
+      }
+
+      out.classList.remove('est__walk');
+      price.style.fontSize = '';
+      var n = P.base
+            + Number($i('eBed').value) * P.perBedroom
+            + Number($i('eBath').value) * P.perBathroom
+            + Math.max(0, Number($i('eSqft').value) || 0) * P.perSqFt
+            + Number($i('ePets').value) * P.perPet;
+      n *= (P.typeMultiplier[t] || 1);
+      if (t === 'standard') n *= (P.freqMultiplier[f] || 1);
+      n *= (P.condMultiplier[c] || 1);
+      n = Math.max(n, P.minimum);
+
+      var lo = round5(n * (1 - P.rangeSpread)), hi = round5(n * (1 + P.rangeSpread));
+      var shown = '$' + lo + ' – $' + hi;
+      label.textContent = T.rangeK;
+      price.textContent = shown;
+      note.textContent = T.rangeN.replace('%s', T.home);
+      txt.href = smsHref(T.sms, shown);
+    }
+
+    ['eBed','eBath','eSqft','ePets'].forEach(function (id) {
+      $i(id).addEventListener('input', calc); $i(id).addEventListener('change', calc);
+    });
+    ['eType','eFreq','eCond'].forEach(function (n) {
+      Array.prototype.forEach.call(document.querySelectorAll('input[name="' + n + '"]'),
+        function (r) { r.addEventListener('change', calc); });
+    });
+    calc();
+  })();
 
 })();
 </script>
